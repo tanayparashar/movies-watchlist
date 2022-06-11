@@ -5,7 +5,7 @@ export const MovieCard=(props)=>{
     {
         event.preventDefault()
 		const req = await fetch('http://localhost:3001/addToWatchlist', {
-			method: 'POST',
+			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
 				'x-access-token': localStorage.getItem('token'),
