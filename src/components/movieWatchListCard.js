@@ -7,7 +7,6 @@ export const MovieWatchListCard=(props)=>{
         .then(res=>res.json())
         .then(data=>setMovie(data))
     },[props])
-    console.log(movie)
     return(
         <div className="movieContainer" style={{color:"white"}}>
             {movie?<>
