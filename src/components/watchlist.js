@@ -3,7 +3,7 @@ import {MovieWatchListCard} from "./movieWatchListCard";
 import { useNavigate } from 'react-router-dom';
 async function makepublic()
     {
-		const req = await fetch('http://localhost:3001/makepublic', {
+		const req = await fetch('https://movies-watchlist-2022.herokuapp.com/makepublic', {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ async function makepublic()
     }
 async function makeprivate()
 {
-	const res = await fetch('http://localhost:3001/makeprivate', {
+	const res = await fetch('https://movies-watchlist-2022.herokuapp.com/makeprivate', {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export const Watchlist=()=>{
 
 	async function moviesAdd()
 	{		
-		const res = await fetch('http://localhost:3001/watchlist', {
+		const res = await fetch('https://movies-watchlist-2022.herokuapp.com/watchlist', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},

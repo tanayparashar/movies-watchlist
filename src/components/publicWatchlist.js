@@ -8,7 +8,7 @@ export const PublicWatchlist=()=>{
     const [moviesID,setMovieID]=useState([]);
     async function reqwatchlist()
     {
-        const req = await fetch(`http://localhost:3001/watchlist/${email}`, {
+        const req = await fetch(`https://movies-watchlist-2022.herokuapp.com/${email}`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',

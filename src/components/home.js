@@ -14,7 +14,7 @@ export const Home = () => {
   			.then(data => {setMovies(data); console.log(data)});
 	}
 	async function checkToken() {
-		const req = await fetch('http://localhost:3001/loginCheck', {
+		const req = await fetch('https://movies-watchlist-2022.herokuapp.com/loginCheck', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},

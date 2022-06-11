@@ -10,7 +10,7 @@ export const Register =()=>{
     async function handleRegister(e)
     {
         e.preventDefault();
-        const response = await fetch('http://localhost:3001/register', {
+        const response = await fetch('https://movies-watchlist-2022.herokuapp.com/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

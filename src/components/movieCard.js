@@ -4,7 +4,7 @@ export const MovieCard=(props)=>{
     async function handleAddToWatchList(event)
     {
         event.preventDefault()
-		const req = await fetch('http://localhost:3001/addToWatchlist', {
+		const req = await fetch('https://movies-watchlist-2022.herokuapp.com/addToWatchlist', {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
