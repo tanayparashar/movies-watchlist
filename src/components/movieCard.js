@@ -25,7 +25,7 @@ export const MovieCard=(props)=>{
         <div className="movieContainer" style={{color:"white"}}>
             <div className="moviePosterContainer">
                 {Poster ? (
-          <img
+          <img style={{height:"400px", width:"100%", maxWidth:"400px"}}
             src={Poster}
             alt={`${Title} Poster`}
           />
@@ -35,11 +35,11 @@ export const MovieCard=(props)=>{
             </div>
             <div className="movieDetailsContainer">
                     <div>
-                        <h1>{Title}</h1>
+                        <h1 style={{fontSize:"50px"}}>{Title}</h1>
                     </div>
                     <div>
-                        <h4>{Type}</h4>
-                        <h4>{Year}</h4>
+                        <h2>{Type==="series"?"Series":"Movie"}</h2>
+                        <h2>{Year}</h2>
                     </div>
                     <div>
                         <button onClick={handleAddToWatchList}>Add to watchlist</button>

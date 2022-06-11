@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import jwt from 'jsonwebtoken';
 import { useNavigate } from 'react-router-dom';
 import { MovieCard } from './movieCard';
+import searchIMG from "../assets/search1.png";
+
 export const Home = () => {
 	const navigate = useNavigate();
 	const [search,setSearch]=useState("");
@@ -28,10 +29,16 @@ export const Home = () => {
 			navigate("/");
 		}
 	}
+	function setEnterSearch(e){
+		if (e.key === 'Enter') {
+			searchOMDB();
+		 }
+    }
+	
 	useEffect(() => {
 		const token = localStorage.getItem('token')
 		if (token) {
-			const user = jwt.decode(token);
+			const user = (token);
 			if (!user) {
 				localStorage.removeItem('token')
 				navigate('/');
@@ -47,11 +54,11 @@ export const Home = () => {
 	return (
 		<div>
 			<div className='navbar'>
-        		<div style={{margin:"10px"}} className="navheader"><h2 style={{color:"#0acfa9"}}>Movies Search</h2></div>
-				<div className='navbutton'><h3>watchlist</h3> </div>
+        		<div style={{margin:"10px"}} className="navheader" onClick={()=>{navigate("/home");}}><h2 style={{color:"#0acfa9"}}>Movies Search</h2></div>
+				<div className='navbutton' onClick={()=>{navigate("/watchlist");}}><h3>Watchlist</h3> </div>
       		</div>
 			<div className='searchDiv'>
-				<input placeholder="Search your movie here..." value={search} onChange={(e)=>{setSearch(e.target.value)}}/>
+				<input placeholder="Search here..." value={search} onKeyUp={(e)=>{setEnterSearch(e)}} onChange={(e)=>{setSearch(e.target.value)}}/>
 				<button onClick={searchOMDB}>Search</button>
 			</div >
 			<div className="centerMovies">
@@ -60,7 +67,7 @@ export const Home = () => {
 				movies?.Response==="True"?
 					movies?.Search?.map((ele)=>
 						<MovieCard Title={ele.Title} Year={ele.Year} Type={ele.Type} Poster={ele.Poster} imdbID={ele.imdbID}/>
-					):<h2 style={{color:"white"}}>No search result Found</h2>:<h1 style={{color:"white"}}>search your favourite movies</h1>
+					):<h2 style={{color:"white"}}>No search result found !!</h2>:<div> <img src={searchIMG} alt="search-png" style={{height:"250px"}}/> <h1 style={{color:"#6A097D"}}>Search Your Favourite Movies</h1></div>
 			}
 			</div>
 		</div>

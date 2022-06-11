@@ -122,7 +122,7 @@ input {
 }
 
 ::placeholder {
-  color: #e5e5e5;
+  color: #DDDDDD;
 }
 
 button {
@@ -168,7 +168,7 @@ button {
   text-align: center;
 }
 .searchDiv input {
-  color:#f3f3f3;
+  color:#DDDDDD;
   border: 2px solid #0acfa9;
   font-size: 20px
 }
@@ -177,10 +177,15 @@ button {
 }
 .navheader{
   display: flex;
+  cursor: pointer;
+  margin-left: 1% !important;
   justify-content: flex-start;
 }
 .navbutton{
-  margin-right: 5%;
+  margin-right: 2%;
+  font-size: 16px;
+  cursor: pointer;
+  color:#F05454
 }
 .movieContainer {
   /* Add shadows to create the "movi.movieContainer" effect */
@@ -208,7 +213,7 @@ button {
   justify-content: space-between;
   width:80%;
   margin:3.5%;
-  background-color: #2c2d35;
+  background-color: #303841;
   box-shadow: 0 15px 20px 0 rgba(153, 153, 153, 0.537);
   border-radius: 25px;
   padding: 20px;
@@ -221,7 +226,37 @@ button {
   padding:7px
 }
 .movieDetailsContainer{
-  margin:5%;
+  margin:0%;
   width:70%;
-  margin-left: 10%;
+  margin-left: 5%;
+  margin-top:5px;
+  margin-right: 5%;
+}
+.movieDetailsContainer button{
+  background-color: #f09819;
+}
+.watclistButtons{
+  display: flex;
+  justify-content: flex-end;
+}
+.watclistButtons button {
+  width:10%;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.movieDescWatchlist
+{
+  display: flex;
+  justify-content: space-evenly;
+}
+.detailsContainer
+{
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
 }

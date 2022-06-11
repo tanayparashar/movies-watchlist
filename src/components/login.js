@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 
 export const Login =()=>{
@@ -29,6 +29,9 @@ export const Login =()=>{
                 alert('Please check your username and password')
             }
     }
+    useEffect(()=>{
+        localStorage.removeItem('token');
+    },[])
     return(
         <div>
             <div className="background">
