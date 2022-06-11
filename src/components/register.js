@@ -29,7 +29,6 @@ export const Register =()=>{
             }
             else
             {
-                console.log("err",data);
                 setErrMsg(data.message);
             }
     }

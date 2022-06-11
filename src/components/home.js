@@ -11,7 +11,7 @@ export const Home = () => {
 	{
 		fetch(`https://www.omdbapi.com/?s=${search}&apikey=b6e41423`)
 			.then(response => response.json())
-  			.then(data => {setMovies(data); console.log(data)});
+  			.then(data => {setMovies(data)});
 	}
 	async function checkToken() {
 		const req = await fetch('https://movies-watchlist-2022.herokuapp.com/loginCheck', {
@@ -21,7 +21,6 @@ export const Home = () => {
 		})
 
 		const data = await req.json()
-		console.log(data);
 		if (data.status === 'ok') {
 			console.log("logged in");
 		} else {
