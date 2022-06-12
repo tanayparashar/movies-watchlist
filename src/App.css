@@ -260,3 +260,25 @@ button {
   flex-direction: column;
   align-items: space-between;
 }
+::-webkit-scrollbar-thumb {
+  background: rgb(179, 166, 166);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: block;
+  background-color: rgb(180, 179, 179);
+  max-height: 5px;
+  max-width: 2x;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(207, 206, 206);
+  border-radius: 5px;
+}
