@@ -1,7 +1,7 @@
 # Movies Watchlist
 
 ## Project links
-### Project hosted on Netflify https://cerulean-frangollo-1fc238.netlify.app/
+### Project hosted on Netlify https://cerulean-frangollo-1fc238.netlify.app/
 ### Backend repository https://github.com/tanayparashar/movies-watchlist-server/
 
 ## Available Scripts
