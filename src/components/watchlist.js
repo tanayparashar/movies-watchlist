@@ -1,7 +1,12 @@
 import { useEffect ,useState} from "react";
 import {MovieWatchListCard} from "./movieWatchListCard";
 import { useNavigate } from 'react-router-dom';
-async function makepublic()
+import jwt_decode from "jwt-decode";
+
+export const Watchlist=()=>{
+	const [moviesId,setMoviesId]=useState([]);
+	const navigate = useNavigate();
+	async function makepublic()
     {
 		const req = await fetch('https://movies-watchlist-2022.herokuapp.com/makepublic', {
 			method: 'PUT',
@@ -12,31 +17,24 @@ async function makepublic()
 		})
 		const data = await req.json()
 		if (data.status === 'success') {
-			alert('watchlist made public access at /watchlist/[your email]')
-		} else {
-            
+			const decoded = jwt_decode(localStorage.getItem("token"));
+			navigate(`/watchlist/${decoded.email}`);
 		}
     }
-async function makeprivate()
-{
-	const res = await fetch('https://movies-watchlist-2022.herokuapp.com/makeprivate', {
-		method: 'PUT',
-		headers: {
-			'Content-Type': 'application/json',
-			'x-access-token': localStorage.getItem('token'),
-		}
-	})
-	const data = await res.json()
-	if (data.status === 'success') {
-		alert('watchlist made [private]')
-	} else {
-		
+	async function makeprivate()
+	{
+		const res = await fetch('https://movies-watchlist-2022.herokuapp.com/makeprivate', {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+				'x-access-token': localStorage.getItem('token'),
+			}
+		})
+		const data = await res.json();
+		if (data.status === 'success') {
+			alert('watchlist made [private]');
+		} 
 	}
-}
-
-export const Watchlist=()=>{
-	const [moviesId,setMoviesId]=useState([]);
-	const navigate = useNavigate();
 
 	async function moviesAdd()
 	{		

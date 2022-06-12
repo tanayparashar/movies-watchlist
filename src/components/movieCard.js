@@ -1,4 +1,3 @@
-
 export const MovieCard=(props)=>{
     const {Title,Year,Type,Poster,imdbID}=props;
     async function handleAddToWatchList(event)

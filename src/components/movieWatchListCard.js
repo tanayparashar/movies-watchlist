@@ -4,8 +4,8 @@ export const MovieWatchListCard=(props)=>{
     const {imdbID}=props;
     useEffect(()=>{
         fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=b6e41423`)
-        .then(res=>res.json())
-        .then(data=>setMovie(data))
+            .then(res=>res.json())
+            .then(data=>setMovie(data))
     },[props])
     return(
         <div className="movieContainer" style={{color:"white"}}>
@@ -34,7 +34,7 @@ export const MovieWatchListCard=(props)=>{
                         <div className="movieDescWatchlist">
                             <h2>{movie.Plot}</h2>
                         </div>
-                        </div>
+                </div>
                 </div>
             </>:""}
         </div>
