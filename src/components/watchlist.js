@@ -36,7 +36,6 @@ async function makeprivate()
 
 export const Watchlist=()=>{
 	const [moviesId,setMoviesId]=useState([]);
-	const [movies,setMovies]=useState([]);
 	const navigate = useNavigate();
 
 	async function moviesAdd()
