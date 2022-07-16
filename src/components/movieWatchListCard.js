@@ -6,6 +6,7 @@ export const MovieWatchListCard=(props)=>{
         fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=b6e41423`)
             .then(res=>res.json())
             .then(data=>setMovie(data))
+            // eslint-disable-next-line react-hooks/exhaustive-deps
     },[props])
     return(
         <div className="movieContainer" style={{color:"white"}}>

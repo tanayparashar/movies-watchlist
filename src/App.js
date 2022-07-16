@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import {Login} from "./components/login";
 import {Register} from "./components/register";
 import {Home} from "./components/home"
 import { Watchlist } from './components/watchlist';
 import { PublicWatchlist } from './components/publicWatchlist';
 import './App.css';
-import { Routes, Route, Link,Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">

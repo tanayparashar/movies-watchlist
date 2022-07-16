@@ -1,13 +1,14 @@
 import { useState ,useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { Loader } from "./loader";
 export const Login =()=>{
     const [email,setEmail]=useState("");
     const navigate = useNavigate();
-
+    const[loader,setLoader]=useState(false);
     const [password,setPassword]=useState("");
     async function handleLogin(e)
     {
+        setLoader(true);
         e.preventDefault();
         const response = await fetch('https://movies-watchlist-2022.herokuapp.com/login', {
                 method: 'POST',
@@ -28,12 +29,14 @@ export const Login =()=>{
             } else {
                 alert('Please check your username and password')
             }
+            setLoader(false);
     }
     useEffect(()=>{
         localStorage.removeItem('token');
     },[])
     return(
         <div>
+            <Loader isVisible={loader} />
             <div className="background">
                 <div className="shape"></div>
                 <div className="shape"></div>

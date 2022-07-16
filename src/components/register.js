@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { Loader } from "./loader";
 export const Register =()=>{
     const navigate = useNavigate();
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     const [name,setName]=useState("");
     const [errMsg,setErrMsg]=useState("");
+    const [loader,setLoader]=useState(false);
     async function handleRegister(e)
     {
+        setLoader(true);
         e.preventDefault();
         const response = await fetch('https://movies-watchlist-2022.herokuapp.com/register', {
                 method: 'POST',
@@ -23,7 +25,7 @@ export const Register =()=>{
             })
 
             const data = await response.json()
-
+            setLoader(false);
             if (data.status === 'ok') {
                 navigate('/')
             }
@@ -34,6 +36,7 @@ export const Register =()=>{
     }
     return(
         <div>
+            <Loader isVisible={loader} />
             <div className="background">
                 <div className="shape"></div>
                 <div className="shape"></div>
